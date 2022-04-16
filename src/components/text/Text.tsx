@@ -1,16 +1,22 @@
-export const LowContrastText = styled.p`
-  --light: 60%;
-  --saturation: ${theme.saturation.active};
-  color: hsl(var(--hue) var(--saturation) var(--light));
+import { styled, theme } from 'stitches.config'
 
-  margin: 0;
+export const Text = styled('span', {
+  margin: 0,
 
-  &::selection {
-    background-color: hsl(var(--hue) var(--saturation) 18%);
+  '--light': theme.light.textHighContrast,
+  '--saturation': theme.saturation.active,
+  color: 'hsl(var(--hue) var(--saturation) var(--light))',
+
+  '&::selection': {
+    backgroundColor: `hsl(var(--hue) var(--saturation) ${theme.light.actor200})`
+  },
+
+  variants: {
+    contrast: {
+      low: {
+        '--light': theme.light.textLowContrast
+      },
+      high: {}
+    }
   }
-`
-
-export const HighContrastText = styled(LowContrastText)`
-  --light: 100%;
-  --saturation: ${theme.saturation.active};
-`
+})

@@ -1,60 +1,66 @@
-export const GhostInput = styled.input`
-  all: unset;
-  box-sizing: border-box;
+import { styled, theme } from 'stitches.config'
 
-  --light: 18%;
-  --border-light: var(--light);
-  --text-light: 100%;
-  --placeholder-light: 70%;
-  --saturation: 0%;
-  --hue: 0;
-  background-color: hsl(var(--hue) var(--saturation) var(--light));
+export const Input = styled('input', {
+  all: 'unset',
+  '-webkit-appearance': 'none',
 
-  border: 1px solid;
-  border-color: hsl(var(--hue) var(--saturation) var(--border-light));
+  cursor: 'pointer',
+  display: 'inline-flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 
-  min-width: 90px;
-  height: 36px;
-  margin: 4px;
-  border-radius: 6px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 16px;
-  cursor: pointer;
+  minWidth: 90,
+  height: 36,
+  margin: 4,
+  borderRadius: 6,
+  padding: '0 16px',
 
-  color: hsl(var(--hue) var(--saturation) var(--text-light));
+  '--light': theme.light.actor200,
+  '--border-light': 'var(--light)',
+  '--text-light': theme.light.textHighContrast,
+  '--placeholder-light': theme.light.textLowContrast,
+  '--saturation': theme.light.none,
+  '--hue': 0,
+  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))',
 
-  &:hover,
-  &:focus {
-    --light: 26%;
+  border: '1px solid',
+  borderColor: 'hsl(var(--hue) var(--saturation) var(--border-light))',
+
+  color: 'hsl(var(--hue) var(--saturation) var(--text-light))',
+
+  '&:hover, &:focus': {
+    '--light': theme.light.actor400
+  },
+
+  '&:active': {
+    '--light': theme.light.actor500
+  },
+
+  '&::placeholder': {
+    color: 'hsl(var(--hue) var(--saturation) var(--placeholder-light))'
+  },
+
+  '&::selection': {
+    backgroundColor: `hsl(var(--hue) var(--saturation) ${theme.light.actor200})`
+  },
+
+  variants: {
+    emphasis: {
+      outline: {
+        '--light': theme.light.midStage,
+        '--border-light': theme.light.actor500,
+
+        '&:hover, &:focus': {
+          '--light': theme.light.frontStage,
+          '--border-light': theme.light.actor700
+        },
+
+        '&:active': {
+          '--light': theme.light.actor100,
+          '--border-light': theme.light.actor800
+        }
+      },
+      full: {}
+    }
   }
-
-  &:active {
-    --light: 30%;
-  }
-
-  &::placeholder {
-    color: hsl(var(--hue) var(--saturation) var(--placeholder-light));
-  }
-
-  &::selection {
-    background-color: hsl(var(--hue) var(--saturation) 18%);
-  }
-`
-
-export const OutlineInput = styled(GhostInput)`
-  --light: 8%;
-  --border-light: 30%;
-
-  &:hover,
-  &:focus {
-    --light: 11%;
-    --border-light: 40%;
-  }
-
-  &:active {
-    --light: 14%;
-    --border-light: 45%;
-  }
-`
+})

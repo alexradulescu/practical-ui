@@ -1,24 +1,24 @@
 import { styled, theme } from 'stitches.config'
 
 export const Card = styled('div', {
-  '--light': theme.light.midStage,
-  '--saturation': theme.saturation.grey,
-  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))',
+  display: 'inline-block',
 
   minWidth: 320,
   margin: 4,
   borderRadius: 8,
-  display: 'inline-block',
-  overflow: 'hidden'
+
+  '--light': theme.light.midStage,
+  '--saturation': theme.saturation.grey,
+  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))'
 })
 
 export const CardHeader = styled('div', {
+  width: '100%',
+  padding: '16px 24px 16px 24px',
+
   '--light': theme.light.frontStage,
   '--saturation': theme.saturation.grey,
-  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))',
-
-  width: '100%',
-  padding: '16px 24px 16px 24px'
+  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))'
 })
 
 export const CardBody = styled('div', {
@@ -26,10 +26,10 @@ export const CardBody = styled('div', {
 })
 
 export const CardFooter = styled('div', {
+  width: '100%',
+  padding: '16px 24px 16px 24px',
+
   '--light': theme.light.frontStage,
   '--saturation': theme.saturation.grey,
-  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))',
-
-  width: '100%',
-  padding: '16px 24px 16px 24px'
+  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))'
 })

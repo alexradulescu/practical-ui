@@ -1,64 +1,65 @@
-export const GhostButton = styled.button`
-  all: unset;
+import { styled, theme } from 'stitches.config'
 
-  box-sizing: border-box;
-  --light: 14%;
-  --border-light: var(--light);
-  --saturation: ${theme.saturation.active};
-  background-color: hsl(var(--hue) var(--saturation) var(--light));
+export const Button = styled('button', {
+  all: 'unset',
+  display: 'inline-flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  cursor: 'pointer',
+  minWidth: 36,
+  minHeight: 36,
+  margin: 4,
+  borderRadius: 6,
+  padding: '0 16px',
 
-  border: 1px solid;
-  border-color: hsl(var(--hue) var(--saturation) var(--border-light));
+  '--light': theme.light.actor100,
+  '--border-light': 'var(--light)',
+  '--saturation': theme.saturation.active,
+  backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))',
 
-  min-width: 36px;
-  min-height: 36px;
-  margin: 4px;
-  border-radius: 6px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 16px;
-  cursor: pointer;
+  border: '1px solid',
+  borderColor: 'hsl(var(--hue) var(--saturation) var(--border-light))',
 
-  &:hover,
-  &:focus {
-    --light: 18%;
+  '&:hover, &:focus': {
+    '--light': theme.light.actor200
+  },
+
+  '&:active': {
+    '--light': theme.light.actor300
+  },
+
+  '&::selection': {
+    backgroundColor: 'transparent'
+  },
+
+  variants: {
+    emphasis: {
+      outline: {
+        '--light': theme.light.midStage,
+        '--border-light': theme.light.actor500,
+
+        '&:hover, &:focus': {
+          '--light': theme.light.frontStage,
+          '--border-light': theme.light.actor600
+        },
+
+        '&:active': {
+          '--light': theme.light.actor100,
+          '--border-light': theme.light.actor700
+        }
+      },
+      fill: {
+        '--light': theme.light.actor500,
+
+        '&:hover, &:focus': {
+          '--light': theme.light.actor600
+        },
+
+        '&:active': {
+          '--light': theme.light.actor700
+        }
+      },
+      ghost: {}
+    }
   }
-
-  &:active {
-    --light: 22%;
-  }
-
-  &::selection {
-    background-color: transparent;
-  }
-`
-
-export const OutlineButton = styled(GhostButton)`
-  --light: 8%;
-  --border-light: 30%;
-
-  &:hover,
-  &:focus {
-    --light: 11%;
-    --border-light: 35%;
-  }
-
-  &:active {
-    --light: 14%;
-    --border-light: 40%;
-  }
-`
-
-export const FillButton = styled(GhostButton)`
-  --light: 30%;
-
-  &:hover,
-  &:focus {
-    --light: 35%;
-  }
-
-  &:active {
-    --light: 40%;
-  }
-`
+})
