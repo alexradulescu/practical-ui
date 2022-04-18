@@ -21,6 +21,7 @@ export const {
       red: 0,
       yellow: 50,
       green: 120,
+      cyan: 170,
       blue: 210
     },
     light: {

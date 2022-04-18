@@ -6,6 +6,7 @@ export const Card = styled('div', {
   minWidth: 320,
   margin: 4,
   borderRadius: 8,
+  overflow: 'hidden',
 
   '--hue': theme.hue.blue,
   '--light': theme.light.midStage,

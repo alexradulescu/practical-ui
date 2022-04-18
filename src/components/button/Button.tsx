@@ -12,6 +12,7 @@ export const Button = styled('button', {
   borderRadius: 6,
   padding: '0 16px',
 
+  '--hue': theme.hue.blue,
   '--light': theme.light.actor100,
   '--border-light': 'var(--light)',
   '--saturation': theme.saturation.active,
@@ -70,6 +71,14 @@ export const Button = styled('button', {
         }
       },
       ghost: {}
+    },
+    accent: {
+      primary: { '--hue': theme.hue.blue },
+      warning: { '--hue': theme.hue.yellow },
+      error: { '--hue': theme.hue.red },
+      success: { '--hue': theme.hue.green },
+      info: { '--hue': theme.hue.cyan },
+      light: { '--saturation': theme.saturation.grey }
     }
   }
 })

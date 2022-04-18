@@ -1,5 +1,3 @@
-import { CSSProperties } from 'react'
-
 import {
   Card,
   Alert,
@@ -15,29 +13,31 @@ import {
   Td
 } from 'src/components'
 
-export const Demo = ({ hue }: { hue: number }) => {
-  const style = { '--hue': hue } as CSSProperties
-
+export const Demo = ({
+  accent
+}: {
+  accent: 'primary' | 'warning' | 'error' | 'success' | 'info'
+}) => {
   return (
     <>
-      <Card style={style}>
-        <CardHeader style={style}>
-          <Text contrast="high" style={style}>
+      <Card>
+        <CardHeader>
+          <Text contrast="high" accent={accent}>
             Card Title
           </Text>
         </CardHeader>
 
-        <CardBody style={style}>
-          <Alert style={style}>
-            <Text contrast="high" style={style}>
+        <CardBody>
+          <Alert accent={accent}>
+            <Text contrast="high" accent={accent}>
               Alert Title
             </Text>
-            <Text style={style}>Lorem Ipsum</Text>
+            <Text accent={accent}>Lorem Ipsum</Text>
           </Alert>
           <div>
             <Input type="text" placeholder="Placeholder..." />
-            <Button style={style}>
-              <Text contrast="high" style={style}>
+            <Button accent={accent}>
+              <Text contrast="high" accent={accent}>
                 Add +
               </Text>
             </Button>
@@ -48,8 +48,8 @@ export const Demo = ({ hue }: { hue: number }) => {
               type="text"
               placeholder="Placeholder..."
             />
-            <Button emphasis="outline" style={style}>
-              <Text contrast="high" style={style}>
+            <Button emphasis="outline" accent={accent}>
+              <Text contrast="high" accent={accent}>
                 Add +
               </Text>
             </Button>
@@ -101,19 +101,19 @@ export const Demo = ({ hue }: { hue: number }) => {
           </div>
         </CardBody>
 
-        <CardFooter style={style}>
-          <Button style={style}>
-            <Text contrast="high" style={style}>
+        <CardFooter>
+          <Button accent={accent}>
+            <Text contrast="high" accent={accent}>
               Add +
             </Text>
           </Button>
-          <Button emphasis="outline" style={style}>
-            <Text contrast="high" style={style}>
+          <Button emphasis="outline" accent={accent}>
+            <Text contrast="high" accent={accent}>
               Add +
             </Text>
           </Button>
-          <Button emphasis="fill" style={style}>
-            <Text contrast="high" style={style}>
+          <Button emphasis="fill" accent={accent}>
+            <Text contrast="high" accent={accent}>
               Add +
             </Text>
           </Button>
@@ -154,14 +154,11 @@ const TableDemo = () => (
   </Card>
 )
 
-const HUE = [0, 25, 50, 120, 210, 170]
-
 export const DemoList = () => {
+  const accent = 'primary'
   return (
     <>
-      {HUE.map((hue) => (
-        <Demo hue={hue} />
-      ))}
+      <Demo accent={accent} />
       <TableDemo />
     </>
   )
