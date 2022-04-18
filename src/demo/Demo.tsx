@@ -8,7 +8,11 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Input
+  Input,
+  Select,
+  Table,
+  Th,
+  Td
 } from 'src/components'
 
 export const Demo = ({ hue }: { hue: number }) => {
@@ -51,6 +55,34 @@ export const Demo = ({ hue }: { hue: number }) => {
             </Button>
           </div>
           <div>
+            <Select placeholder="Favourite car">
+              <option>Renault</option>
+              <option>VW</option>
+              <option>Tesla</option>
+            </Select>
+          </div>
+          <div>
+            <Select emphasis="outline" placeholder="Favourite car">
+              <option>Renault</option>
+              <option>VW</option>
+              <option>Tesla</option>
+            </Select>
+          </div>
+          <div>
+            <Select multiple placeholder="Favourite car">
+              <option>Renault</option>
+              <option>VW</option>
+              <option>Tesla</option>
+            </Select>
+          </div>
+          <div>
+            <Select multiple emphasis="outline" placeholder="Favourite car">
+              <option>Renault</option>
+              <option>VW</option>
+              <option>Tesla</option>
+            </Select>
+          </div>
+          <div>
             <Input type="email" placeholder="Email..." />
             <Input type="password" placeholder="Password..." />
             <Input type="search" inputMode="search" placeholder="Search..." />
@@ -91,6 +123,37 @@ export const Demo = ({ hue }: { hue: number }) => {
   )
 }
 
+const TableDemo = () => (
+  <Card>
+    <CardBody>
+      <Table>
+        <thead>
+          <tr>
+            <Th>Name</Th>
+            <Th>Sex</Th>
+            <Th>Location</Th>
+            <Th align="right">Worth</Th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <Td>Dave Gamache</Td>
+            <Td>Male</Td>
+            <Td>San Francisco</Td>
+            <Td align="right">53,762,978.07 USD</Td>
+          </tr>
+          <tr>
+            <Td>Dwayne Johnson</Td>
+            <Td>Male</Td>
+            <Td>Hayward</Td>
+            <Td align="right">134,046,727.87 USD</Td>
+          </tr>
+        </tbody>
+      </Table>
+    </CardBody>
+  </Card>
+)
+
 const HUE = [0, 25, 50, 120, 210, 170]
 
 export const DemoList = () => {
@@ -99,6 +162,7 @@ export const DemoList = () => {
       {HUE.map((hue) => (
         <Demo hue={hue} />
       ))}
+      <TableDemo />
     </>
   )
 }

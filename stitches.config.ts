@@ -1,6 +1,6 @@
 import { createStitches } from '@stitches/react'
 
-import { marginX, marginY, paddingX, paddingY } from 'src/utils'
+import { marginX, marginY, paddingX, paddingY, fontSize } from 'src/utils'
 
 export const {
   styled,
@@ -45,6 +45,16 @@ export const {
       grey: '0%',
       offGrey: '20%',
       active: '60%'
+    },
+    fontSizes: {
+      '2xs': '.625rem',
+      xs: '.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem'
     }
   },
   media: {
@@ -58,6 +68,8 @@ export const {
     paddingX,
     px: paddingX,
     paddingY,
-    py: paddingY
+    py: paddingY,
+    fontSize,
+    fs: fontSize
   }
 })

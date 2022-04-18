@@ -1,6 +1,6 @@
 import { styled, theme } from 'stitches.config'
 
-export const Input = styled('input', {
+export const Select = styled('select', {
   all: 'unset',
   '-webkit-appearance': 'none',
 
@@ -10,7 +10,6 @@ export const Input = styled('input', {
   alignItems: 'center',
 
   minWidth: 90,
-  height: 36,
   margin: 4,
   borderRadius: 6,
   padding: '0 16px',
@@ -32,6 +31,16 @@ export const Input = styled('input', {
     '--light': theme.light.actor400
   },
 
+  '&:focus': {
+    '--outline-hue': theme.hue.blue,
+    '--outline-light': theme.light.actor500,
+    '--outline-saturation': theme.saturation.active,
+    outline: `2px solid`,
+    outlineColor:
+      'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
+    outlineOffset: 2
+  },
+
   '&:active': {
     '--light': theme.light.actor500
   },
@@ -44,14 +53,15 @@ export const Input = styled('input', {
     backgroundColor: `hsl(var(--hue) var(--saturation) ${theme.light.actor200})`
   },
 
-  '&:focus': {
-    '--outline-hue': theme.hue.blue,
-    '--outline-light': theme.light.actor500,
-    '--outline-saturation': theme.saturation.active,
-    outline: `2px solid`,
-    outlineColor:
-      'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
-    outlineOffset: 2
+  '&:not([multiple])': {
+    minHeight: 36,
+    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' width='12' height='12'%3E%3Cpath d='M10.193 3.97a.75.75 0 0 1 1.062 1.062L6.53 9.756a.75.75 0 0 1-1.06 0L.745 5.032A.75.75 0 0 1 1.807 3.97L6 8.163l4.193-4.193z' fill-rule='evenodd'%3E%3C/path%3E%3C/svg%3E")`,
+    backgroundPosition: 'calc(100% - 16px) center',
+    backgroundRepeat: 'no-repeat'
+  },
+
+  '&[multiple]': {
+    padding: '8px 16px'
   },
 
   variants: {

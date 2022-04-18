@@ -17,3 +17,7 @@ export const paddingY = (value: number | string) => ({
   paddingTop: value,
   paddingBottom: value
 })
+
+export const fontSize = (value: number | string) => ({
+  fontSize: value
+})

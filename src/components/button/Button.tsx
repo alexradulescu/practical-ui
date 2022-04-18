@@ -24,6 +24,16 @@ export const Button = styled('button', {
     '--light': theme.light.actor200
   },
 
+  '&:focus': {
+    '--outline-hue': theme.hue.blue,
+    '--outline-light': theme.light.actor500,
+    '--outline-saturation': theme.saturation.active,
+    outline: `2px solid`,
+    outlineColor:
+      'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
+    outlineOffset: 2
+  },
+
   '&:active': {
     '--light': theme.light.actor300
   },
