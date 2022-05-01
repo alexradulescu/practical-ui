@@ -9,7 +9,7 @@ export const Input = styled('input', {
   justifyContent: 'center',
   alignItems: 'center',
 
-  minWidth: 90,
+  minWidth: 120,
   height: 36,
   margin: 4,
   borderRadius: 6,
@@ -44,15 +44,15 @@ export const Input = styled('input', {
     backgroundColor: `hsl(var(--hue) var(--saturation) ${theme.light.actor200})`
   },
 
-  '&:focus': {
-    '--outline-hue': theme.hue.blue,
-    '--outline-light': theme.light.actor500,
-    '--outline-saturation': theme.saturation.active,
-    outline: `2px solid`,
-    outlineColor:
-      'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
-    outlineOffset: 2
-  },
+  // '&:focus': {
+  //   '--outline-hue': theme.hue.blue,
+  //   '--outline-light': theme.light.actor500,
+  //   '--outline-saturation': theme.saturation.active,
+  //   outline: `2px solid`,
+  //   outlineColor:
+  //     'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
+  //   outlineOffset: 2
+  // },
 
   variants: {
     emphasis: {

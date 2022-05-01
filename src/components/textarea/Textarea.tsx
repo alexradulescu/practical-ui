@@ -1,28 +1,46 @@
 import { styled, theme } from 'stitches.config'
 
-export const Button = styled('button', {
+export const Textarea = styled('textarea', {
   all: 'unset',
+  '-webkit-appearance': 'none',
+
+  cursor: 'pointer',
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
-  cursor: 'pointer',
-  minWidth: 36,
-  minHeight: 36,
+
+  minWidth: 120,
   margin: 4,
   borderRadius: 6,
-  padding: '0 16px',
+  padding: '8px 16px',
 
-  '--hue': theme.hue.blue,
-  '--light': theme.light.actor100,
+  '--light': theme.light.actor200,
   '--border-light': 'var(--light)',
-  '--saturation': theme.saturation.active,
+  '--text-light': theme.light.textHighContrast,
+  '--placeholder-light': theme.light.textLowContrast,
+  '--saturation': theme.light.none,
+  '--hue': 0,
   backgroundColor: 'hsl(var(--hue) var(--saturation) var(--light))',
 
   border: '1px solid',
   borderColor: 'hsl(var(--hue) var(--saturation) var(--border-light))',
 
+  color: 'hsl(var(--hue) var(--saturation) var(--text-light))',
+
   '&:hover, &:focus': {
-    '--light': theme.light.actor200
+    '--light': theme.light.actor400
+  },
+
+  '&:active': {
+    '--light': theme.light.actor500
+  },
+
+  '&::placeholder': {
+    color: 'hsl(var(--hue) var(--saturation) var(--placeholder-light))'
+  },
+
+  '&::selection': {
+    backgroundColor: `hsl(var(--hue) var(--saturation) ${theme.light.actor200})`
   },
 
   // '&:focus': {
@@ -35,14 +53,6 @@ export const Button = styled('button', {
   //   outlineOffset: 2
   // },
 
-  '&:active': {
-    '--light': theme.light.actor300
-  },
-
-  '&::selection': {
-    backgroundColor: 'transparent'
-  },
-
   variants: {
     emphasis: {
       outline: {
@@ -51,34 +61,15 @@ export const Button = styled('button', {
 
         '&:hover, &:focus': {
           '--light': theme.light.frontStage,
-          '--border-light': theme.light.actor600
+          '--border-light': theme.light.actor700
         },
 
         '&:active': {
           '--light': theme.light.actor100,
-          '--border-light': theme.light.actor700
+          '--border-light': theme.light.actor800
         }
       },
-      fill: {
-        '--light': theme.light.actor500,
-
-        '&:hover, &:focus': {
-          '--light': theme.light.actor600
-        },
-
-        '&:active': {
-          '--light': theme.light.actor700
-        }
-      },
-      ghost: {}
-    },
-    accent: {
-      primary: { '--hue': theme.hue.blue },
-      warning: { '--hue': theme.hue.yellow },
-      error: { '--hue': theme.hue.red },
-      success: { '--hue': theme.hue.green },
-      info: { '--hue': theme.hue.cyan },
-      light: { '--saturation': theme.saturation.grey }
+      full: {}
     }
   }
 })

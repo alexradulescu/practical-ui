@@ -10,7 +10,10 @@ import {
   Select,
   Table,
   Th,
-  Td
+  Td,
+  Details,
+  Summary,
+  Textarea
 } from 'src/components'
 
 export const Demo = ({
@@ -99,6 +102,9 @@ export const Demo = ({
             />
             <Input type="text" inputMode="url" placeholder="URL..." />
           </div>
+          <div>
+            <Textarea placeholder="What are you thinging about?" />
+          </div>
         </CardBody>
 
         <CardFooter>
@@ -150,6 +156,11 @@ const TableDemo = () => (
           </tr>
         </tbody>
       </Table>
+
+      <Details>
+        <Summary>Summary here</Summary>
+        <p>And the rest of the text</p>
+      </Details>
     </CardBody>
   </Card>
 )
