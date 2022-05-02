@@ -11,7 +11,7 @@ export const Select = styled('select', {
 
   margin: 4,
   borderRadius: 6,
-  padding: '0 16px',
+  padding: '0 40px 0 16px',
 
   '--light': theme.light.actor200,
   '--border-light': 'var(--light)',
@@ -50,7 +50,7 @@ export const Select = styled('select', {
   },
 
   '&[multiple]': {
-    padding: '8px 16px'
+    padding: '8px 40px 8px 16px'
   },
 
   variants: {
