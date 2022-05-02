@@ -28,16 +28,6 @@ export const Details = styled('details', {
 
   '&:active': {
     '--light': theme.light.actor200
-  },
-
-  '&:focus-within': {
-    '--outline-hue': theme.hue.blue,
-    '--outline-light': theme.light.actor500,
-    '--outline-saturation': theme.saturation.active,
-    outline: `2px solid`,
-    outlineColor:
-      'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
-    outlineOffset: 2
   }
 })
 

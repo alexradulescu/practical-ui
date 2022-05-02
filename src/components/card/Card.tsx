@@ -3,7 +3,7 @@ import { styled, theme } from 'stitches.config'
 export const Card = styled('div', {
   display: 'inline-block',
 
-  minWidth: 320,
+  maxWidth: '100%',
   margin: 4,
   borderRadius: 8,
   overflow: 'hidden',

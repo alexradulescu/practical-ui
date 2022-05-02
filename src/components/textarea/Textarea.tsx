@@ -6,8 +6,6 @@ export const Textarea = styled('textarea', {
 
   cursor: 'pointer',
   display: 'inline-flex',
-  justifyContent: 'center',
-  alignItems: 'center',
 
   minWidth: 120,
   margin: 4,
@@ -42,16 +40,6 @@ export const Textarea = styled('textarea', {
   '&::selection': {
     backgroundColor: `hsl(var(--hue) var(--saturation) ${theme.light.actor200})`
   },
-
-  // '&:focus': {
-  //   '--outline-hue': theme.hue.blue,
-  //   '--outline-light': theme.light.actor500,
-  //   '--outline-saturation': theme.saturation.active,
-  //   outline: `2px solid`,
-  //   outlineColor:
-  //     'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
-  //   outlineOffset: 2
-  // },
 
   variants: {
     emphasis: {

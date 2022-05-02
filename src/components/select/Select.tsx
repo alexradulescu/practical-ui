@@ -9,7 +9,6 @@ export const Select = styled('select', {
   justifyContent: 'center',
   alignItems: 'center',
 
-  minWidth: 90,
   margin: 4,
   borderRadius: 6,
   padding: '0 16px',
@@ -29,16 +28,6 @@ export const Select = styled('select', {
 
   '&:hover, &:focus': {
     '--light': theme.light.actor400
-  },
-
-  '&:focus': {
-    '--outline-hue': theme.hue.blue,
-    '--outline-light': theme.light.actor500,
-    '--outline-saturation': theme.saturation.active,
-    outline: `2px solid`,
-    outlineColor:
-      'hsl(var(--outline-hue) var(--outline-saturation) var(--outline-light))',
-    outlineOffset: 2
   },
 
   '&:active': {
