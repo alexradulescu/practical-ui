@@ -1,9 +1,10 @@
-import { styled, theme } from 'stitches.config'
-import { ComponentProps, FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
+
+import { styled, theme } from 'src/stitches.config'
 
 import { OverflowY } from '../wrappers'
 
-interface TableProps extends ComponentProps<'table'> {
+interface TableProps {
   children?: ReactNode
 }
 

@@ -1,4 +1,4 @@
-import { styled, theme } from 'stitches.config'
+import { styled, theme } from 'src/stitches.config'
 
 export const Details = styled('details', {
   padding: '12px 12px 0',

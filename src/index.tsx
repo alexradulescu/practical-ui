@@ -1,7 +1,11 @@
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 import { Root } from 'src/Root'
 
-const container = document.querySelector('#root')
-const root = createRoot(container)
-root.render(<Root />)
+const root = ReactDOM.createRoot(document.querySelector('#root') as HTMLElement)
+root.render(
+  <React.StrictMode>
+    <Root />
+  </React.StrictMode>
+)

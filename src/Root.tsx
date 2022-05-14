@@ -1,4 +1,4 @@
-import { globalCss } from 'stitches.config'
+import { globalCss } from 'src/stitches.config'
 
 import { DemoList } from './demo'
 

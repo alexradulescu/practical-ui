@@ -1,4 +1,4 @@
-import { styled, theme } from 'stitches.config'
+import { styled, theme } from 'src/stitches.config'
 
 export const Select = styled('select', {
   all: 'unset',

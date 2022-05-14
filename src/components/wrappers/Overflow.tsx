@@ -1,4 +1,4 @@
-import { styled } from 'stitches.config'
+import { styled } from 'src/stitches.config'
 
 export const OverflowX = styled('div', {
   overflowX: 'auto',
