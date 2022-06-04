@@ -1,7 +1,5 @@
 import { createStitches } from '@stitches/react'
 
-import { marginX, marginY, paddingX, paddingY, fontSize } from 'src/utils'
-
 export const {
   styled,
   css,
@@ -13,10 +11,6 @@ export const {
   config
 } = createStitches({
   theme: {
-    // colors: {
-    //   gray400: 'gainsboro',
-    //   gray500: 'lightgray'
-    // }
     hue: {
       red: 0,
       yellow: 50,
@@ -56,21 +50,10 @@ export const {
       xl: '1.25rem',
       '2xl': '1.5rem',
       '3xl': '1.875rem'
-    }
+    },
+    sizes: {}
   },
   media: {
     // bp1: '(min-width: 480px)'
-  },
-  utils: {
-    marginX,
-    mx: marginX,
-    marginY,
-    my: marginY,
-    paddingX,
-    px: paddingX,
-    paddingY,
-    py: paddingY,
-    fontSize,
-    fs: fontSize
   }
 })

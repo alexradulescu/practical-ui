@@ -14,7 +14,8 @@ import {
   Details,
   Summary,
   Textarea,
-  Checkbox
+  Checkbox,
+  Stack
 } from 'src/components'
 import { Radio } from 'src/components/radio'
 
@@ -38,6 +39,7 @@ export const Demo = ({
           </Text>
           <Text accent={accent}>Lorem Ipsum</Text>
         </Alert>
+        <Stack padding={'12'}>Stackkkk</Stack>
         <div>
           <Input type="text" placeholder="Placeholder..." />
           <Button accent={accent}>
