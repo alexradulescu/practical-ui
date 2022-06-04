@@ -13,8 +13,10 @@ import {
   Td,
   Details,
   Summary,
-  Textarea
+  Textarea,
+  Checkbox
 } from 'src/components'
+import { Radio } from 'src/components/radio'
 
 export const Demo = ({
   accent
@@ -22,110 +24,106 @@ export const Demo = ({
   accent: 'primary' | 'warning' | 'error' | 'success' | 'info'
 }) => {
   return (
-    <>
-      <Card>
-        <CardHeader>
+    <Card>
+      <CardHeader>
+        <Text contrast="high" accent={accent}>
+          Card Title
+        </Text>
+      </CardHeader>
+
+      <CardBody>
+        <Alert accent={accent}>
           <Text contrast="high" accent={accent}>
-            Card Title
+            Alert Title
           </Text>
-        </CardHeader>
-
-        <CardBody>
-          <Alert accent={accent}>
-            <Text contrast="high" accent={accent}>
-              Alert Title
-            </Text>
-            <Text accent={accent}>Lorem Ipsum</Text>
-          </Alert>
-          <div>
-            <Input type="text" placeholder="Placeholder..." />
-            <Button accent={accent}>
-              <Text contrast="high" accent={accent}>
-                Add +
-              </Text>
-            </Button>
-          </div>
-          <div>
-            <Input
-              emphasis="outline"
-              type="text"
-              placeholder="Placeholder..."
-            />
-            <Button emphasis="outline" accent={accent}>
-              <Text contrast="high" accent={accent}>
-                Add +
-              </Text>
-            </Button>
-          </div>
-          <div>
-            <Select placeholder="Favourite car">
-              <option>Renault</option>
-              <option>VW</option>
-              <option>Tesla</option>
-            </Select>
-          </div>
-          <div>
-            <Select emphasis="outline" placeholder="Favourite car">
-              <option>Renault</option>
-              <option>VW</option>
-              <option>Tesla</option>
-            </Select>
-          </div>
-          <div>
-            <Select multiple placeholder="Favourite car">
-              <option>Renault</option>
-              <option>VW</option>
-              <option>Tesla</option>
-            </Select>
-          </div>
-          <div>
-            <Select multiple emphasis="outline" placeholder="Favourite car">
-              <option>Renault</option>
-              <option>VW</option>
-              <option>Tesla</option>
-            </Select>
-          </div>
-          <div>
-            <Input type="email" placeholder="Email..." />
-            <Input type="password" placeholder="Password..." />
-            <Input type="search" inputMode="search" placeholder="Search..." />
-            <Input type="date" placeholder="Date..." />
-            <Input
-              type="text"
-              inputMode="decimal"
-              placeholder="Number Decimal..."
-            />
-            <Input
-              type="text"
-              inputMode="tel"
-              placeholder="Number like Tel..."
-            />
-            <Input type="text" inputMode="url" placeholder="URL..." />
-          </div>
-          <div>
-            <Textarea placeholder="What are you thinging about?" />
-          </div>
-        </CardBody>
-
-        <CardFooter>
+          <Text accent={accent}>Lorem Ipsum</Text>
+        </Alert>
+        <div>
+          <Input type="text" placeholder="Placeholder..." />
           <Button accent={accent}>
             <Text contrast="high" accent={accent}>
               Add +
             </Text>
           </Button>
+        </div>
+        <div>
+          <Input emphasis="outline" type="text" placeholder="Placeholder..." />
           <Button emphasis="outline" accent={accent}>
             <Text contrast="high" accent={accent}>
               Add +
             </Text>
           </Button>
-          <Button emphasis="fill" accent={accent}>
-            <Text contrast="high" accent={accent}>
-              Add +
-            </Text>
-          </Button>
-        </CardFooter>
-      </Card>
-    </>
+        </div>
+        <div>
+          <Select placeholder="Favourite car">
+            <option>Renault</option>
+            <option>VW</option>
+            <option>Tesla</option>
+          </Select>
+        </div>
+        <div>
+          <Select emphasis="outline" placeholder="Favourite car">
+            <option>Renault</option>
+            <option>VW</option>
+            <option>Tesla</option>
+          </Select>
+        </div>
+        <div>
+          <Select multiple placeholder="Favourite car">
+            <option>Renault</option>
+            <option>VW</option>
+            <option>Tesla</option>
+          </Select>
+        </div>
+        <div>
+          <Select multiple emphasis="outline" placeholder="Favourite car">
+            <option>Renault</option>
+            <option>VW</option>
+            <option>Tesla</option>
+          </Select>
+        </div>
+        <div>
+          <Input type="email" placeholder="Email..." />
+          <Input type="password" placeholder="Password..." />
+          <Input type="search" inputMode="search" placeholder="Search..." />
+          <Input type="date" placeholder="Date..." />
+          <Input
+            type="text"
+            inputMode="decimal"
+            placeholder="Number Decimal..."
+          />
+          <Input type="text" inputMode="tel" placeholder="Number like Tel..." />
+          <Input type="text" inputMode="url" placeholder="URL..." />
+        </div>
+        <div>
+          <Textarea placeholder="What are you thinging about?" />
+        </div>
+        <div>
+          <Checkbox name="terms" />
+        </div>
+        <div>
+          <Radio name="terms" />
+        </div>
+      </CardBody>
+
+      <CardFooter>
+        <Button accent={accent}>
+          <Text contrast="high" accent={accent}>
+            Add +
+          </Text>
+        </Button>
+        <Button emphasis="outline" accent={accent}>
+          <Text contrast="high" accent={accent}>
+            Add +
+          </Text>
+        </Button>
+        <Button emphasis="fill" accent={accent}>
+          <Text contrast="high" accent={accent}>
+            Add +
+          </Text>
+        </Button>
+      </CardFooter>
+    </Card>
   )
 }
 
